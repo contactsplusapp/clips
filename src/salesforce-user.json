@@ -1,0 +1,45 @@
+{
+    "name": "salesforce-user",
+    "enabled": true,
+    "handles": [
+        "salesforce.com/.*?/UserProfilePage"
+    ],
+    "fields": {
+        "name": {
+            "value": {
+                "selector": "#tailBreadcrumbNode",
+                "attribute": "title"
+            }
+        },
+        "photo": {
+            "value": {
+                "selector": ".profileImage > img",
+                "attribute": "src"
+            }
+        },
+        "title": {
+            "value": {
+                "selector": ".profileSectionData.title"
+            }
+        },
+        "emails": {
+            "value": {
+                "selector": ".profileSectionData.emailAddr > a"
+            }
+        },
+        "phones": {
+            "value": {
+                "xpath": "//*[@class = 'profileSectionDataLine phoneNumber']/text()"
+            },
+            "label": {
+                "xpath": "//*[@class = 'profileSectionDataLine phoneNumber']/span/text()",
+                "regex": "\\(([^\\)]+)\\)"
+            }
+        },
+        "generalLocation": {
+            "value":  {
+                "selector": ".profileSectionData.address"
+            }
+        }
+    }
+}
