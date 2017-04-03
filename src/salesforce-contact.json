@@ -1,5 +1,5 @@
 {
-    "name": "salesforce-user",
+    "name": "salesforce-contact",
     "enabled": true,
     "handles": [
         "salesforce.com/*[^/]+$"
@@ -7,12 +7,12 @@
     "fields": {
         "name": {
             "value": {
-                "selector": ".topName"
+                "selector": ".pageDescription"
             }
         },
         "company": {
             "value": {
-                "xpath": "//td[text() = \"Account Name\"]/following-sibling::td"
+                "xpath": "//td[text() = \"Account Name\"]/following-sibling::td|//td[text() = \"Company\"]/following-sibling::td"
             }
         },
         "title": {
