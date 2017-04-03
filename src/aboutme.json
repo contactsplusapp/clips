@@ -1,0 +1,60 @@
+{
+    "name": "about.me",
+    "enabled": true,
+    "handles": [
+        "about.me"
+    ],
+    "socialUsername": {
+        "pathIndex": 1
+    },
+    "fields": {
+        "name": {
+            "value": {
+                "selector": "meta[name=\"author\"]",
+                "attribute": "content"
+            }
+        },
+        "photo": {
+            "value": {
+                "selector": "meta[property=\"og:image\"]",
+                "attribute": "content",
+                "regex": "(^.*?)(?:\\?)"
+            }
+        },
+        "title": {
+            "value": {
+                "selector": ".role"
+            }
+        },
+        "company": {
+            "value": {
+                "selector": ".meta-section.jobs .meta-item:first-child"
+            }
+        },
+        "website": {
+            "value": {
+                "selector": ".spotlight > a",
+                "attribute": "href"
+            }
+        },
+        "generalLocation": {
+            "value": {
+                "selector": ".location",
+                "regex": "(?:^in)(.*)",
+                "regexFlags": "i"
+            }
+        },
+        "additionalSites": {
+            "value": {
+                "selector": ".social-link",
+                "attribute": "href"
+            },
+            "label": {
+                "selector": ".social-link",
+                "attribute": "title",
+                "regex": "(?:^visit me on)(.*)",
+                "regexFlags": "i" 
+            }
+        }
+    }
+}
