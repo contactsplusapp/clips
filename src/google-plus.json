@@ -1,0 +1,78 @@
+{
+    "name": "google",
+    "enabled": true,
+    "handles": [
+        "plus.google.com"
+    ],
+    "prep": {
+        "click": {
+            "elementSelector": "c-wiz:not([aria-hidden=\"true\"]) [role=\"region\"] c-wiz .O0WRkf.oG5Srb.HQ8yf.C0oVfc.FjQgmf",
+            "waitForSelector": ".jmOUCb.uxFmUe"
+        }
+    },
+    "fields": {
+        "name": {
+            "value": {
+                "selector": "c-wiz:not([style*=\"display: none\"]) c-wiz meta[itemprop=\"name\"]",
+                "attribute": "content"
+            }
+        },
+        "photo": {
+            "value": {
+                "selector": ".NkN0Fc",
+                "attribute": "src"
+            }
+        },
+        "gender": {
+            "value": {
+                "xpath": "//div[@role = \"list\" and .//* [text() = \"Gender\"]]/*[@role = \"listitem\"]//*[@class = \"DOdATc\"]/text()"
+            }
+        },
+        "birthday": {
+            "value": {
+                "xpath": "//div[@role = \"list\" and .//* [text() = \"Birthday\"]]/*[@role = \"listitem\"][last()]//*[@class = \"DOdATc\"]/text()"
+            }
+        },
+        "generalLocation": {
+            "value": {
+                "selector": ".B4Ti2d"
+            }
+        },
+        "emails": {
+            "value": {
+                "xpath": "//*[@class = 'uqKsgd']//*[@role = 'listitem' and .//*[@aria-label = 'Email']]//a/text()"
+            },
+            "label": {
+                "xpath": "//*[@class = 'uqKsgd']//*[@role = 'listitem' and .//*[@aria-label = 'Email']]//div/text()"
+            }
+        },
+        "phones": {
+            "value": {
+                "xpath": "//*[@class = 'uqKsgd']//*[@role = 'listitem' and .//*[@aria-label = 'Phone']]//div[@class = 'DOdATc']/text()"
+            },
+            "label": {
+                "xpath": "//*[@class = 'uqKsgd']//*[@role = 'listitem' and .//*[@aria-label = 'Phone']]//div[@class = 'Y5upsc']/text()"
+            }
+        },
+        "company": {
+            "value": {
+                "xpath": "//*[@class = 'uqKsgd' and .//* [text() = 'Employment']]/*[@role = 'listitem'][1]//*[@class = 'DOdATc']/text()"
+            }
+        },
+        "title": {
+            "value": {
+                "xpath": "//*[@class = 'uqKsgd' and .//* [text() = 'Employment']]/*[@role = 'listitem'][1]//*[@class = 'Y5upsc']/text()",
+                "regex": "(.*?)(?:,)"
+            }
+        },
+        "additionalSites": {
+            "value": {
+                "selector": ".jmOUCb.xQxIpc a.DOdATc",
+                "attribute": "href"
+            },
+            "label": {
+                "selector": ".jmOUCb.xQxIpc a.DOdATc"
+            }
+        }
+    }
+}

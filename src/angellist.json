@@ -1,0 +1,52 @@
+{
+    "name": "AngelList",
+    "enabled": true,
+    "handles": [
+        "angelist.co",
+        "angel.co"
+    ],
+    "socialUsername": {
+        "pathIndex": 1
+    },
+    "fields": {
+        "name": {
+            "value": {
+                "selector": "meta[property=\"og:title\"]",
+                "attribute": "content"
+            }
+        },
+        "photo": {
+            "value": {
+                "selector": ".js-avatar-img",
+                "attribute": "src"
+            }
+        },
+        "generalLocation": {
+            "value": {
+                "xpath": "//span[.//*[@class = \"fontello-location icon\"]]",
+                "attribute": "title"
+            }
+        },
+        "additionalSites": {
+            "value": {
+                "selector": ".link > a",
+                "attribute": "href"
+            },
+            "label": {
+                "selector": ".link > a",
+                "attribute": "dataset.field",
+                "regex": "(.*)(?:_url)"
+            }
+        },
+        "company": {
+            "value": {
+                "xpath": "//*[contains(@class, \"startup_roles\")]//*[@class = \"show\"][.//*[contains(text(), \"- Present\")]]/div[1]/a/text()"
+            }
+        },
+        "title": {
+            "value": {
+                "xpath": "//*[contains(@class, \"startup_roles\")]//*[@class = \"show\"][.//*[contains(text(), \"- Present\")]]/div[2]/span[1]/text()"
+            }
+        }
+    }
+}

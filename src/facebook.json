@@ -1,0 +1,91 @@
+{
+    "name": "Facebook",
+    "enabled": true,
+    "handles": [
+        "facebook.com",
+        "www.facebook.com"
+    ],
+    "prep": {
+        "click": {
+            "elementSelector": "#fbTimelineHeadline a._6-6:nth-child(2)",
+            "waitForSelector": "[data-pnref=\"about\"]"
+        }
+    },
+    "socialUsername": {
+        "pathIndex": 1,
+        "blacklist": ["profile.php"]
+    },
+    "socialUrl": {
+        "regex": "(.+?)(?=&|/about)"  
+    },
+    "fields": {
+        "name": {
+            "value": {
+                "selector": "#fb-timeline-cover-name"
+            }
+        },
+        "photo": {
+            "value": {
+                "selector": ".profilePic.img",
+                "attribute": "src"
+            }
+        },
+        "generalLocation": {
+            "value": {
+                "xpath": "//*[@data-overviewsection=\"contact_basic\"]//li[.//*[@class = \"accessible_elem\" and text() = \"Address\"]]/div/div[2]/span/div[span[not(@class) or @class != \"accessible_elem\"]]//li/text()"
+            }
+        },
+        "birthday": {
+            "value": {
+                "xpath": "//*[@data-overviewsection=\"contact_basic\"]//li[.//*[@class = \"accessible_elem\" and text() = \"Birthday\"]]/div/div[2]/span/div[2]/text()"
+            }
+        },
+        "emails": {
+            "value": {
+                "xpath": "//*[@data-overviewsection=\"contact_basic\"]//li[.//*[@class = \"accessible_elem\" and text() = \"Email\"]]/div/div[2]/span/div/a/text()"
+            }
+        },
+        "phones": {
+            "value": {
+                "xpath": "//*[@data-overviewsection=\"contact_basic\"]//li[.//*[@class = \"accessible_elem\" and text() = \"Phones\"]]/div/div[2]/span/div[span[not(@class) or @class != \"accessible_elem\"]]"
+            }
+        },
+        "title": {
+            "value": {
+                "selector": "[data-pnref=\"overview\"] .uiList li:nth-child(1) [data-overviewsection=\"education\"] ._c24._50f4",
+                "blacklist": [
+                    "Worked"
+                ],
+                "regex": "(^.+)(?:\\s+at\\s)",
+                "regexFlags": "i"
+            }
+        },
+        "company": {
+            "value": {
+                "selector": "[data-pnref=\"overview\"] .uiList li:nth-child(1) [data-overviewsection=\"education\"] ._c24._50f4",
+                "regex": "(?:\\s+at\\s)(.+)",
+                "regexFlags": "i"
+            }
+        },
+        "ims": {
+            "value": {
+                "xpath": "//*[@data-overviewsection=\"contact_basic\"]//li[.//*[@class = \"accessible_elem\" and text() = \"Social Links\"]]/div/div[2]/span/div[span[not(@class) or @class != \"accessible_elem\"]]/span/text()|//*[@data-overviewsection=\"contact_basic\"]//li[.//*[@class = \"accessible_elem\" and text() = \"Social Links\"]]/div/div[2]/span/div[span[not(@class) or @class != \"accessible_elem\"]]/span/a[@href=\"#\"]"
+            },
+            "label": {
+                "xpath": "//*[@data-overviewsection=\"contact_basic\"]//li[.//*[@class = \"accessible_elem\" and text() = \"Social Links\"]]/div/div[2]/span/div[span[not(@class) or @class != \"accessible_elem\"]]/span[a[@href=\"#\"]]/span/text()|//*[@data-overviewsection=\"contact_basic\"]//li[.//*[@class = \"accessible_elem\" and text() = \"Social Links\"]]/div/div[2]/span/div[span[not(@class) or @class != \"accessible_elem\"]]/span/span/text()",
+                "regex": "\\(([^\\)]+)\\)"
+            }
+        },
+        "additionalSites": {
+            "value": {
+                "xpath": "//*[@data-overviewsection=\"contact_basic\"]//li[.//*[@class = \"accessible_elem\" and text() = \"Social Links\"]]/div/div[2]/span/div[span[not(@class) or @class != \"accessible_elem\"]]/span/a[@href != \"#\"]",
+                "attribute": "href",
+                "searchParam": "u"
+            },
+            "label": {
+                "xpath": "//*[@data-overviewsection=\"contact_basic\"]//li[.//*[@class = \"accessible_elem\" and text() = \"Social Links\"]]/div/div[2]/span/div[span[not(@class) or @class != \"accessible_elem\"]]/span/span/text()",
+                "regex": "\\(([^\\)]+)\\)"
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Pinterest",
+    "enabled": true,
+    "handles": [
+        "pinterest.com",
+        "www.pinterest.com"
+    ],
+    "socialUsername": {
+        "pathIndex": 1
+    },
+    "fields": {
+        "name": {
+            "value": {
+                "selector": "._0._12._2._3 h3"
+            }
+        },
+        "photo": {
+            "value": {
+                "selector": "._0._12._2._3 img",
+                "attribute": "src"
+            }
+        }
+    }
+}

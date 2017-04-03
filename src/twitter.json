@@ -1,0 +1,42 @@
+{
+    "name": "Twitter",
+    "enabled": true,
+    "handles": [
+        "twitter.com",
+        "www.twitter.com"
+    ],
+    "socialUsername": {
+        "selector": ".username"
+    },
+    "fields": {
+        "name": {
+            "value": {
+                "selector": ".ProfileHeaderCard-nameLink"
+            }
+        },
+        "photo": {
+            "value": {
+                "selector": ".ProfileAvatar-image",
+                "attribute": "src"
+            }
+        },
+        "generalLocation": {
+            "value": {
+                "selector": ".ProfileHeaderCard-locationText"
+            }
+        },
+        "website": {
+            "value": {
+                "selector": ".ProfileHeaderCard-urlText > a",
+                "attribute": "title"
+            }
+        },
+        "birthday": {
+            "value": {
+                "selector": ".ProfileHeaderCard-birthdateText",
+                "regex": "(?:born\\s+on\\s+)(.*)",
+                "regexFlags": "i"
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "name": "GitHub",
+    "enabled": true,
+    "handles": [
+        "github.com",
+        "www.github.com"
+    ],
+    "socialUsername": {
+        "selector": ".vcard-username"  
+    },
+    "fields": {
+        "name": {
+            "value": {
+                "selector": ".vcard-fullname"
+            }
+        },
+        "photo": {
+            "value": {
+                "selector": ".avatar.width-full",
+                "attribute": "src"
+            }
+        },
+        "emails": {
+            "value": {
+                "selector": "[itemprop=\"email\"] a"
+            }
+        },
+        "generalLocation": {
+            "value": {
+                "selector": "[itemprop=\"homeLocation\"]"
+            }
+        },
+        "website": {
+            "value": {
+                "selector": "[itemprop=\"url\"] > a",
+                "attribute": "href"
+            }
+        },
+        "company": {
+            "value": {
+                "selector": "[itemprop=\"worksFor\"] a",
+                "regex": "[^@]+"
+            }
+        }
+    }
+}
