@@ -11,12 +11,6 @@
                 "attribute": "title"
             }
         },
-        "photo": {
-            "value": {
-                "selector": ".profileImage > img",
-                "attribute": "src"
-            }
-        },
         "title": {
             "value": {
                 "selector": ".profileSectionData.title"
