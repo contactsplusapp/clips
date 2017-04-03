@@ -40,7 +40,7 @@
         "generalLocation": {
             "value": {
                 "selector": ".location",
-                "regex": "(?:^in)(.*)",
+                "regex": "(?:^in)?(.*)",
                 "regexFlags": "i"
             }
         },
