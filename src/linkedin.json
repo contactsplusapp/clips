@@ -1,6 +1,6 @@
 {
     "name": "LinkedIn",
-    "enabled": false,
+    "enabled": true,
     "handles": [
         "linkedin.com",
         "www.linkedin.com"
