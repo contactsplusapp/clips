@@ -33,7 +33,8 @@
         },
         "emails": {
             "value": {
-                "xpath": "//td[text() = \"Email\"]/following-sibling::td"
+                "xpath": "//td[text() = \"Email\"]/following-sibling::td",
+                "regex": "(.*?)(?:\\s|$)"
             }
         }
     }
