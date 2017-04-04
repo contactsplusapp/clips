@@ -2,7 +2,7 @@
     "name": "crunchbase",
     "enabled": true,
     "handles": [
-        "www.crunchbase.com/person"
+        "www.crunchbase.com"
     ],
     "socialUrl": {
         "regex": "(.+?)(?=#)"
@@ -21,22 +21,26 @@
         },
         "birthday": {
             "value": {
-                "xpath": "//dt[text() = 'Born:']/following-sibling::dd/text()"
+                "xpath": "//dt[text() = 'Born:']/following-sibling::dd/text()",
+                "blacklist": ["Unknown"]
             }
         },
         "gender": {
             "value": {
-                "xpath": "//dt[text() = 'Gender:']/following-sibling::dd/text()"
+                "xpath": "//dt[text() = 'Gender:']/following-sibling::dd/text()",
+                "blacklist": ["Unknown"]
             }
         },
         "generalLocation": {
             "value": {
-                "xpath": "//dt[text() = 'Location:']/following-sibling::dd/text()"
+                "xpath": "//dt[text() = 'Location:']/following-sibling::dd/text()",
+                "blacklist": ["Unknown"]
             }
         },
         "website": {
             "value": {
-                "xpath": "//dt[text() = 'Website:']/following-sibling::dd/text()"
+                "xpath": "//dt[text() = 'Website:']/following-sibling::dd/text()",
+                "blacklist": ["Unknown"]
             }
         },
         "additionalSites": {
