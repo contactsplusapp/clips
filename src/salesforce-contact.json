@@ -7,7 +7,7 @@
     "fields": {
         "name": {
             "value": {
-                "selector": ".pageDescription"
+                "xpath": "//*[@class = 'topName' or @class = 'pageDescription']"
             }
         },
         "company": {
