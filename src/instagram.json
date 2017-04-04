@@ -1,0 +1,24 @@
+{
+    "name": "Instagram",
+    "enabled": true,
+    "handles": [
+        "instagram.com"
+    ],
+    "socialUsername": {
+        "selector": "h1"
+    },
+    "fields": {
+        "name": {
+            "value": {
+                "selector": "title",
+                "regex": "(^.*?)(?:\\()"
+            }
+        },
+        "photo": {
+            "value": {
+                "selector": "img._iv4d5",
+                "attribute": "src"
+            }
+        }
+    }
+}
