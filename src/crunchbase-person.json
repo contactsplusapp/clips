@@ -1,0 +1,63 @@
+{
+    "name": "crunchbase",
+    "enabled": true,
+    "handles": [
+        "www.crunchbase.com/person"
+    ],
+    "socialUrl": {
+        "regex": "(.+?)(?=#)"
+    },
+    "fields": {
+        "name": {
+            "value": {
+                "selector": "#profile_header_heading > a"
+            }
+        },
+        "photo": {
+            "value": {
+                "selector": ".entity-info-card-primary-image",
+                "attribute": "src"
+            }
+        },
+        "birthday": {
+            "value": {
+                "xpath": "//dt[text() = 'Born:']/following-sibling::dd/text()"
+            }
+        },
+        "gender": {
+            "value": {
+                "xpath": "//dt[text() = 'Gender:']/following-sibling::dd/text()"
+            }
+        },
+        "generalLocation": {
+            "value": {
+                "xpath": "//dt[text() = 'Location:']/following-sibling::dd/text()"
+            }
+        },
+        "website": {
+            "value": {
+                "xpath": "//dt[text() = 'Website:']/following-sibling::dd/text()"
+            }
+        },
+        "additionalSites": {
+            "value": {
+                "selector": ".social-links > a",
+                "attribute": "href"
+            },
+            "label": {
+                "selector": ".social-links > a",
+                "attribute": "dataset.icons"
+            }
+        },
+        "title": {
+            "value": {
+                "xpath": "//dt[text() = 'Primary Role']/following-sibling::dd/text()"
+            }
+        },
+        "company": {
+            "value": {
+                "xpath": "//dt[text() = 'Primary Role']/following-sibling::dd/a/text()"
+            }
+        }
+    }
+}
