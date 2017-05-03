@@ -54,7 +54,8 @@
             "value": {
                 "selector": "[data-pnref=\"overview\"] .uiList li:nth-child(1) [data-overviewsection=\"education\"] ._c24._50f4",
                 "blacklist": [
-                    "Worked"
+                    "Worked",
+                    "Works"
                 ],
                 "regex": "(^.+)(?:\\s+at\\s)",
                 "regexFlags": "i"
