@@ -7,7 +7,7 @@
     ],
     "prep": {
         "click": {
-            "elementSelector": "#fbTimelineHeadline a._6-6:nth-child(2)",
+            "elementSelector": "#fbTimelineHeadline [data-tab-key=\"about\"]",
             "waitForSelector": "[data-pnref=\"about\"]"
         }
     },
