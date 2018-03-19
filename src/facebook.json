@@ -38,7 +38,8 @@
         "birthday": {
             "value": {
                 "xpath": "//*[@data-overviewsection=\"contact_basic\"]//li[.//*[@class = \"accessible_elem\" and text() = \"Birthday\"]]/div/div[2]/span/div[2]/text()"
-            }
+            },
+            "dateFormat": ["DD MMMM YYYY", "MMMM DD YYYY", "DD MMMM", "MMMM DD"]
         },
         "emails": {
             "value": {
